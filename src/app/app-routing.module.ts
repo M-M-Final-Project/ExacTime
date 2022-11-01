@@ -6,6 +6,7 @@ import { CycleComponent } from './cycle/cycle.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginManagerComponent } from './login-manager/login-manager.component';
 import { LoginComponent } from './login/login.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { StudentsComponent } from './students/students.component';
 import { UpdatedComponent } from './updated/updated.component';
@@ -23,11 +24,10 @@ const routes: Routes = [
       { path: 'Cycle', component: CycleComponent },
       { path: 'Class-num', component: ClassNumComponent },
       { path: 'Students', component: StudentsComponent },
+      {path:'**',component:NotFoundPageComponent}
     ],
   },
-  // { path: 'Cycle', component: CycleComponent },
-  // { path: 'Class-num', component: ClassNumComponent },
-  // { path: 'Students', component: StudentsComponent },
+  {path:'**',component:NotFoundPageComponent}
 ];
 
 @NgModule({

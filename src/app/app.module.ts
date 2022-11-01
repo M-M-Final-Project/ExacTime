@@ -12,6 +12,7 @@ import { CycleComponent } from './cycle/cycle.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { StudentsComponent } from './students/students.component';
 import { ServiceService } from './service/service.service';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ServiceService } from './service/service.service';
     ClassNumComponent,
     CycleComponent,
     HomePageComponent,
-    StudentsComponent
+    StudentsComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,

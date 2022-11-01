@@ -1,12 +1,12 @@
 <header class="header">
   <div class="date">
-    <h1>{{ date | date: "HH" }}:{{ date | date: "mm" }}</h1>
+    <h1>{{time.date | date: "HH" }}:{{ time.date | date: "mm" }}</h1>
     <h3>
-      {{ date | date: "dd" }}/{{ date | date: "MM" }}/{{ date | date: "yyyy" }}
+      {{ time.date | date: "dd" }}/{{ time.date | date: "MM" }}/{{ time.date | date: "yyyy" }}
     </h3>
   </div>
   <div class="status">
-    <h1>{{ text_time }}</h1>
+    <h1>{{ time.status }}</h1>
   </div>
   <div class="logo">
     <img width="150px" height="auto" src="assets\Pictures\LOGO_S.png" alt="" />

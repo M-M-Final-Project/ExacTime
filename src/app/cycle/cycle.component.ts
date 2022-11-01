@@ -7,12 +7,9 @@ import { ServiceService } from '../service/service.service';
   styleUrls: ['./cycle.component.css']
 })
 export class CycleComponent implements OnInit {
-  // profile: any;
   institution: any;
   cycle_selected='';
   constructor(private serv:ServiceService) {
-    // this.profile=serv.getProfile();
-    // this.institution=this.profile.institution;
     this.institution=serv.getProfile().institution;
    }
 
@@ -20,7 +17,6 @@ export class CycleComponent implements OnInit {
   }
   btn(i:string){
     this.cycle_selected=i;
-    // alert(this.cycle_selected);
     
   }
 

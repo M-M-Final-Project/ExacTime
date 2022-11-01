@@ -15,7 +15,7 @@ export class StudentsComponent implements OnInit {
 
   btn(i:string){
     this.name_selected=i;
-    alert(this.name_selected);
+    // alert(this.name_selected);
     
   }
 
