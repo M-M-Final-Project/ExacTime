@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service/service.service';
 
 @Component({
   selector: 'app-cycle',
@@ -6,16 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cycle.component.css']
 })
 export class CycleComponent implements OnInit {
-  elementary=['ג','ב','א','ו','ה','ד','','ח','ז'];
-  seminar=['יא','י','ט','יד','יג','יב','','',''];
+  // profile: any;
+  institution: any;
   cycle_selected='';
-  constructor() { }
+  constructor(private serv:ServiceService) {
+    // this.profile=serv.getProfile();
+    // this.institution=this.profile.institution;
+    this.institution=serv.getProfile().institution;
+   }
 
   ngOnInit(): void {
   }
   btn(i:string){
     this.cycle_selected=i;
-    alert(this.cycle_selected);
+    // alert(this.cycle_selected);
     
   }
 

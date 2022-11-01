@@ -13,7 +13,9 @@
   </div>
 </header>
 <div class="main">
-  <div>
+  <router-outlet></router-outlet>
+
+  <!-- <div>
     <div *ngIf="!cycle_comp" class="btn-continue" (click)="back()">חזור</div>
     <div class="btn-continue" (click)="change_comp()">המשך</div></div>
   
@@ -21,7 +23,7 @@
     <div *ngIf="cycle_comp"><app-cycle></app-cycle></div>
     <div *ngIf="class_num_comp"><app-class-num></app-class-num></div>
     <div *ngIf="students_comp" ><app-students></app-students></div>
-  </div>
+  </div> -->
 </div>
 
-<footer class="footer">©M&M ExacTime</footer>
+<!-- <footer class="footer">©M&M ExacTime</footer> -->

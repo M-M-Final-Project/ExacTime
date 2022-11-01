@@ -11,6 +11,7 @@ import { ClassNumComponent } from './class-num/class-num.component';
 import { CycleComponent } from './cycle/cycle.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { StudentsComponent } from './students/students.component';
+import { ServiceService } from './service/service.service';
 
 @NgModule({
   declarations: [
