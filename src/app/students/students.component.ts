@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service/service.service';
 
 @Component({
   selector: 'app-students',
@@ -6,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
-  students_name=["מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד",];
-  name_selected='';
-  constructor() { }
+  students_name;
+  
+  constructor(private serv:ServiceService) {
+    this.students_name=serv.getStudentsName();
+   }
 
   ngOnInit(): void {
   }
 
   btn(i:string){
-    this.name_selected=i;
-    // alert(this.name_selected);
-    
+    this.serv.setStudentName(i);    
   }
 
 }

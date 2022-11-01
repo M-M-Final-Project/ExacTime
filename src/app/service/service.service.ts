@@ -8,6 +8,8 @@ export class ServiceService {
   elementary=['ג','ב','א','ו','ה','ד','','ח','ז'];
   seminar=['יא','י','ט','יד','יג','יב','','',''];
   institution_arr=[this.elementary,this.seminar];
+  students_name=["מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד",];
+
 
   profile={
     user_name:"Michal",
@@ -21,7 +23,36 @@ export class ServiceService {
     status:""
   }
 
+  student={
+    name:"",
+    cycle:"",
+    class_num:0,
+    time:new Date()
+  }
 
+  getStudentsName(){
+    return this.students_name;
+  }
+
+  setStudentCycle(cycle: string){
+    this.student.cycle=cycle;
+  }
+
+  setStudentClass_num(class_num: number){
+    this.student.class_num=class_num;
+  }
+
+  setStudentTime(time: Date){
+    this.student.time=time;
+  }
+
+  setStudentName(name: string){
+    this.student.name=name;
+  }
+
+  getStudent(){
+    return this.student;
+  }
 
   constructor() {
     this.status_text()

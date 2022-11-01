@@ -8,7 +8,6 @@ import { ServiceService } from '../service/service.service';
 })
 export class ClassNumComponent implements OnInit {
   number_class: number[]=[];
-  // number_class=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
   num_class;
   constructor(private serv:ServiceService) { 
     this.num_class=serv.getProfile().mis_class;
@@ -24,9 +23,7 @@ export class ClassNumComponent implements OnInit {
   ngOnInit(): void {
   }
   btn(i:number){
-    this.num_class=i;
-    // alert(this.num_class);
-    
+    this.serv.setStudentClass_num(i);    
   }
 
 }

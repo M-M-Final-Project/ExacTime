@@ -33,6 +33,7 @@ button:hover {
 .container {
   padding: 50px;
   padding-top: 40px;
+  text-align: end;
 }
 
 

@@ -8,16 +8,16 @@ import { ServiceService } from '../service/service.service';
 })
 export class CycleComponent implements OnInit {
   institution: any;
-  cycle_selected='';
+  
   constructor(private serv:ServiceService) {
     this.institution=serv.getProfile().institution;
+
    }
 
   ngOnInit(): void {
   }
   btn(i:string){
-    this.cycle_selected=i;
-    
+    this.serv.setStudentCycle(i);
   }
 
 }
