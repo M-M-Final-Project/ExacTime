@@ -11,7 +11,7 @@ import { StudentsComponent } from './students/students.component';
 import { UpdatedComponent } from './updated/updated.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '', component: LoginComponent },
   { path: 'LoginManager', component: LoginManagerComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'SignUp', component: SignUpComponent },

@@ -1,8 +1,16 @@
-<div class="all">
-  <div class="comp">
+<div class="all main">
+  <div></div>
+  <div class="comp animate">
     <div class="flex-container">
-      <div [routerLink]="['/Home/Class-num']"  routerLinkActive="active" (click)="btn(i)" *ngFor="let i of institution">{{ i }}</div>
+      <div
+        [routerLink]="['/Home/Class-num']"
+        routerLinkActive="active"
+        (click)="btn(i)"
+        *ngFor="let i of institution"
+      >
+        {{ i }}
+      </div>
     </div>
   </div>
-    <div class="text">אנא בחרי את המחזור בו את לומדת</div> 
+  <div class="text">אנא בחרי את המחזור בו את לומדת</div>
 </div>

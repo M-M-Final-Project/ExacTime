@@ -1,5 +1,6 @@
-<div class="all">
-  <div class="comp">
+<div class="all main">
+  <div [routerLink]="['/Home/Class-num']" routerLinkActive="active"  class="btn-continue">חזור</div>
+  <div class="comp animate">
     <div class="flex-container">
       <div (click)="btn(i)" *ngFor="let i of students_name">{{ i }}</div>
     </div>
