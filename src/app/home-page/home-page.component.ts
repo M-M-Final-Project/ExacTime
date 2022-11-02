@@ -23,6 +23,5 @@ export class HomePageComponent implements OnInit {
       this.serv.setDate(new Date());
       this.time=this.serv.getTime();
     }, 1000)
-    
   }
 }
