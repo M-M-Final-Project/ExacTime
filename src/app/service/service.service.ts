@@ -30,6 +30,10 @@ export class ServiceService {
     time:new Date()
   }
 
+  setDate(date:Date){
+    this.time.date=date;
+  }
+
   getStudentsName(){
     return this.students_name;
   }
