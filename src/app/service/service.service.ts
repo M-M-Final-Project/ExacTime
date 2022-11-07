@@ -1,72 +1,86 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  elementary=['ג','ב','א','ו','ה','ד','','ח','ז'];
-  seminar=['יא','י','ט','יד','יג','יב','','',''];
-  institution_arr=[this.elementary,this.seminar];
-  students_name=["מיכל מערבי","מרגלית אברמד","שרי מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד",];
+  private userLoggedIn = new Subject<boolean>();
 
 
-  profile={
-    user_name:"Michal",
-    password:"123456",
-    institution:this.institution_arr[0],
-    mis_class:16,  
+  elementary = ['ג', 'ב', 'א', 'ו', 'ה', 'ד', '', 'ח', 'ז'];
+  seminar = ['יא', 'י', 'ט', 'יד', 'יג', 'יב', '', '', ''];
+  institution_arr = [this.elementary, this.seminar];
+  students_name = ["מיכל מערבי", "מרגלית אברמד", "שרי מערבי", "מרגלית אברמד", "מיכל מערבי", "מרגלית אברמד", "מיכל מערבי", "מרגלית אברמד", "מיכל מערבי", "מרגלית אברמד", "מיכל מערבי", "מרגלית אברמד", "מיכל מערבי", "מרגלית אברמד", "מיכל מערבי", "מרגלית אברמד", "מיכל מערבי", "מרגלית אברמד",];
+
+
+  profile = {
+    user_name: "Michal",
+    password: "123456",
+    institution: this.institution_arr[0],
+    mis_class: 16,
   }
 
-  time={
-    date:new Date(),
-    status:""
+  time = {
+    date: new Date(),
+    status: ""
   }
 
-  student={
-    name:"",
-    cycle:"",
-    class_num:0,
-    time:new Date()
+  student = {
+    name: "",
+    cycle: "",
+    class_num: 0,
+    time: new Date()
   }
 
-  setDate(date:Date){
-    this.time.date=date;
+
+  setUserLoggedIn(userLoggedIn: boolean) {
+    this.userLoggedIn.next(userLoggedIn);
   }
 
-  getStudentsName(){
+  getUserLoggedIn(): Observable<boolean> {
+    return this.userLoggedIn.asObservable();
+  }
+
+  setDate(date: Date) {
+    this.time.date = date;
+  }
+
+  getStudentsName() {
     return this.students_name;
   }
 
-  setStudentCycle(cycle: string){
-    this.student.cycle=cycle;
+  setStudentCycle(cycle: string) {
+    this.student.cycle = cycle;
   }
 
-  setStudentClass_num(class_num: number){
-    this.student.class_num=class_num;
+  setStudentClass_num(class_num: number) {
+    this.student.class_num = class_num;
   }
 
-  setStudentTime(time: Date){
-    this.student.time=time;
+  setStudentTime(time: Date) {
+    this.student.time = time;
   }
 
-  setStudentName(name: string){
-    this.student.name=name;
+  setStudentName(name: string) {
+    this.student.name = name;
   }
 
-  getStudent(){
+  getStudent() {
     return this.student;
   }
 
   constructor() {
     this.status_text()
-   }
+    this.userLoggedIn.next(false);
+  }
 
-  getProfile(){
+  getProfile() {
     return this.profile;
   }
 
-  getTime(){
+  getTime() {
     return this.time;
   }
 
