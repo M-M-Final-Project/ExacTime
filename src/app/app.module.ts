@@ -18,7 +18,11 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { StudentsComponent } from './students/students.component';
 import { ServiceService } from './service/service.service';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-<<<<<<< HEAD
+import { HomeManagerComponent } from './home-manager/home-manager.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+/*<<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { HttpClient } from '@angular/common/http';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
@@ -29,7 +33,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 =======
 import { HomeManagerComponent } from './home-manager/home-manager.component';
 >>>>>>> 902ba151cba50e8e863f3fc080fe452ff9c74b88
-
+*/
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,8 +53,8 @@ import { HomeManagerComponent } from './home-manager/home-manager.component';
     HttpClientModule,
     AppRoutingModule,
     // ServiceService,
-    BrowserAnimationsModule,
-    MomentModule,
+    //BrowserAnimationsModule,
+    //MomentModule,
     // MatDialogModule,
     ModalModule,
     NgIdleKeepaliveModule.forRoot(),
