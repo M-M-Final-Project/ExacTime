@@ -18,7 +18,13 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { StudentsComponent } from './students/students.component';
 import { ServiceService } from './service/service.service';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { HttpClient } from '@angular/common/http';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
+import { MomentModule } from 'ngx-moment';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+// import { JitCompiler } from '@angular/compiler';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -35,10 +41,18 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    ServiceService
+    // ServiceService,
+    BrowserAnimationsModule,
+    MomentModule,
+    // MatDialogModule,
+    ModalModule,
+    NgIdleKeepaliveModule.forRoot(),
+    BrowserModule, 
+    ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [ ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

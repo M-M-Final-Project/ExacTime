@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ServiceService {
 
-  private userLoggedIn = new Subject<boolean>();
+  //private userLoggedIn = new Subject<boolean>();
 
 
   elementary = ['ג', 'ב', 'א', 'ו', 'ה', 'ד', '', 'ח', 'ז'];
@@ -34,6 +34,16 @@ export class ServiceService {
     time: new Date()
   }
 
+ 
+
+  private userLoggedIn = new Subject<boolean>();
+  constructor() {
+    this.status_text()
+    this.userLoggedIn.next(false);
+  }
+
+
+ //login 
 
   setUserLoggedIn(userLoggedIn: boolean) {
     this.userLoggedIn.next(userLoggedIn);
@@ -42,6 +52,7 @@ export class ServiceService {
   getUserLoggedIn(): Observable<boolean> {
     return this.userLoggedIn.asObservable();
   }
+  //end login
 
   setDate(date: Date) {
     this.time.date = date;
@@ -71,10 +82,7 @@ export class ServiceService {
     return this.student;
   }
 
-  constructor() {
-    this.status_text()
-    this.userLoggedIn.next(false);
-  }
+
 
   getProfile() {
     return this.profile;

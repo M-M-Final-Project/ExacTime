@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Route } from '@angular/router';
+import { ServiceService } from '../service/service.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login-manager',
@@ -8,10 +13,12 @@ import { Component, OnInit } from '@angular/core';
 export class LoginManagerComponent implements OnInit {
   Time!: Number;
   s: string = "";
-  constructor() { 
+  constructor(/*private service:ServiceService, private router:Route*/) { 
     this.Time = new Date().getHours();
     // this.s = this.Time.toString();
   }
+  model: User = new User();
+
 
   ngOnInit(): void {
     console.log(this.s);
@@ -48,20 +55,23 @@ export class LoginManagerComponent implements OnInit {
         console.log("צהריים טובים!");
     }
   }
-  // HelloTime() {
-  //   switch (this.s) {
-  //     case "05" || "06" || "07" || "08" || "09" || "10" || "11" || "12":
-  //       console.log("בוקר טוב!")
-  //       break;
-  //     case "13" || "14" || "15" || "16" || "17" || "18":
-  //       console.log("צהריים טובים")
-  //       break;
-  //     case "1"||"19" || "20" || "21" || "22" || "23" || "00" || "1" || "02" || "03" || "04":
-  //       console.log("לילה טוב!")
-  //       break;
-  // default:
-  //   console.log("לילה טוב!")
-  //   break;
+
+  // onSubmit(loginForm: NgForm) {
+  //   console.log(this.model)
+  //   if(loginForm.valid) {
+  //     this.service.setUserLoggedIn(true)
+  //     // this.router.Navigation(['/Login']);
+  //     //this.router.navigate(['/Login'])
+  //   }
   // }
-  // }
+}
+export class User {
+
+  constructor(
+    
+  ) {  }
+
+  public userName: string | undefined;
+  public password: string | undefined;
+
 }
