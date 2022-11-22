@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ClassNumComponent } from './class-num/class-num.component';
 import { CycleComponent } from './cycle/cycle.component';
+import { HomeManagerComponent } from './home-manager/home-manager.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginManagerComponent } from './login-manager/login-manager.component';
 import { LoginComponent } from './login/login.component';
@@ -27,7 +28,9 @@ const routes: Routes = [
       {path:'**',component:NotFoundPageComponent}
     ],
   },
+  {path:'Home-manager',component:HomeManagerComponent},
   {path:'**',component:NotFoundPageComponent}
+  
 ];
 
 @NgModule({
