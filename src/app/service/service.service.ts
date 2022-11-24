@@ -5,7 +5,7 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
-
+/*
 <<<<<<< HEAD
   //private userLoggedIn = new Subject<boolean>();
 =======
@@ -14,7 +14,7 @@ export class ServiceService {
   institution_arr=[this.elementary,this.seminar];
   students_name=["מיכל מערבי","מרגלית אברמד","שרי מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","חני מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד","מיכל מערבי","מרגלית אברמד",];
 >>>>>>> 902ba151cba50e8e863f3fc080fe452ff9c74b88
-
+*/
 
   elementary = ['ג', 'ב', 'א', 'ו', 'ה', 'ד', '', 'ח', 'ז'];
   seminar = ['יא', 'י', 'ט', 'יד', 'יג', 'יב', '', '', ''];
