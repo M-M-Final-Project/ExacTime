@@ -3,7 +3,8 @@ import { Route } from '@angular/router';
 import { ServiceService } from '../service/service.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-
+import { NgModel } from '@angular/forms';
+import { LoginManagerServiceService } from '../service/login-manager-service.service';
 
 @Component({
   selector: 'app-login-manager',
@@ -13,7 +14,7 @@ import { NgForm } from '@angular/forms';
 export class LoginManagerComponent implements OnInit {
   Time!: Number;
   s: string = "";
-  constructor(/*private service:ServiceService, private router:Route*/) { 
+  constructor(private service:ServiceService, private loginService:LoginManagerServiceService ,private router:Router) { 
     this.Time = new Date().getHours();
     // this.s = this.Time.toString();
   }
@@ -56,22 +57,25 @@ export class LoginManagerComponent implements OnInit {
     }
   }
 
-  // onSubmit(loginForm: NgForm) {
-  //   console.log(this.model)
-  //   if(loginForm.valid) {
-  //     this.service.setUserLoggedIn(true)
-  //     // this.router.Navigation(['/Login']);
-  //     //this.router.navigate(['/Login'])
-  //   }
-  // }
+  //get data from form and check them in DB
+  onSubmit(loginForm: NgForm) {
+    console.log(this.model)
+    //check UserName in DB- change to email
+    this.loginService.getUserId(this.model.userName,this.model.password);
+    if(loginForm.valid) {
+      this.service.setUserLoggedIn(true)
+      this.router.navigate(['/Home-manager']);
+      console.log('hi')
+    }
+  }
 }
 export class User {
 
-  constructor(
-    
-  ) {  }
+  constructor() {  }
 
-  public userName: string | undefined;
-  public password: string | undefined;
+  public userName!: string ;
+  // | undefined;
+  public password!: string;
+  //  | undefined;
 
 }

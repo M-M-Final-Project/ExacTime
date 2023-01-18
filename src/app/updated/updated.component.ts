@@ -9,11 +9,11 @@ import { ServiceService } from '../service/service.service';
 export class UpdatedComponent implements OnInit {
   time;
   student: any;
-  constructor(private serv:ServiceService) {
+  constructor(private serv: ServiceService) {
     this.time = new Date();
     serv.setStudentTime(this.time);
-    this.student=serv.getStudent();
-   }
+    this.student = serv.getStudent();
+  }
 
   ngOnInit(): void {
   }

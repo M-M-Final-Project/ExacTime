@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { NgIdleKeepaliveModule } from '@ng-idle/core'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
 // import { MomentModule } from 'angular-moment';
 import { Idle } from '@ng-idle/core';
-// import { ModalModule } from 'ngx-bootstrap/modal';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -29,6 +26,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 //=======
 import { HomeManagerComponent } from './home-manager/home-manager.component';
 //>>>>>>> 902ba151cba50e8e863f3fc080fe452ff9c74b88
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,7 +53,8 @@ import { HomeManagerComponent } from './home-manager/home-manager.component';
     ModalModule,
     NgIdleKeepaliveModule.forRoot(),
     BrowserModule, 
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule
   ],
   providers: [ ServiceService],
   bootstrap: [AppComponent]
